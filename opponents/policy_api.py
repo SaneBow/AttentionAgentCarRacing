@@ -8,9 +8,8 @@ from .ppo.ppo_trainer import PPOTrainer, ppo_config
 @gin.configurable
 class PPOPolicyAPI:
     def __init__(self, log_dir=None, suffix=None, _test=False):
-        # self.resized_dim = 42
         # env = make_envs(env_id='cCarRacing-v0', num_envs=1)
-        # a hack: avoid make a useless env only to fetch observation space, which can cause GPU usage spike
+        # a hack: avoid making useless envs only to fetch observation space
         env = type('', (), {})()    # fake env object
         env.observation_space = spaces.Box(
             low=0,
@@ -26,6 +25,8 @@ class PPOPolicyAPI:
             success = self.agent.load_w(log_dir, suffix)
             if not success and not _test:
                 raise ValueError("Failed to load agent!")
+        else:
+            raise Exception("PPO Policy API load nothing")
 
     def reset(self):
         pass

@@ -6,7 +6,7 @@ import opponents.policy_api
 
 
 # CMA configurations
-cma.CMA.population_size = 32
+cma.CMA.population_size = 256
 cma.CMA.init_sigma = 0.1
 
 cma.CMAMaster.seed = 0
@@ -41,10 +41,10 @@ utility.create_task.out_of_track_cap = 20
 utility.create_task.max_steps = 1000
 utility.create_task.task_loader = @gym_task.CarRacingTask()
 
-gym_task.CarRacingTask.crop = False
-gym_task.CarRacingTask.grass_penalty = 1
+gym_task.CarRacingTask.crop = True
+gym_task.CarRacingTask.grass_penalty = 3
 gym_task.CarRacingTask.action_repeat = 1
 gym_task.CarRacingTask.opponent = @policy_api.PPOPolicyAPI()
 
-policy_api.PPOPolicyAPI.log_dir = "opponents/data/alphacar/"
-policy_api.PPOPolicyAPI.suffix = "alphacar"
+# policy_api.PPOPolicyAPI.log_dir = "opponents/data/alphacar/"
+# policy_api.PPOPolicyAPI.suffix = "alphacar"

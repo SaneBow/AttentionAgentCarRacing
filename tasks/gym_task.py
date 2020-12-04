@@ -152,7 +152,7 @@ class TakeCoverTask(GymTask):
 class CarRacingTask(GymTask):
     """Gym CarRacing-v0 task."""
 
-    def __init__(self, crop, grass_penalty, action_repeat, opponent):
+    def __init__(self, crop=False, grass_penalty=0, action_repeat=0, opponent=None):
         super(CarRacingTask, self).__init__()
         self._max_steps = 0
         self._neg_reward_cnt = 0
