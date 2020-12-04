@@ -1,3 +1,11 @@
+# My Modifications
+
+* Switch to use [competitive-rl](https://github.com/cuhkrlcourse/competitive-rl/) instead of orignal OpenAI CarRacingv0.
+* Can load opponent (see `configs/CarRacing.gin`)
+* Add image crop (96x96 -> 86x86) and grass penalty (can be confiured in `configs/CarRacing.gin`). Code in `env_wrapper`.
+* Add capability to restore from interrupted training (example usage `train_local.sh -m model.npz -i 900`)
+
+
 # Neuroevolution of Self-Interpretable Agents
 
 ![attentionagent](https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/attentionagent.gif)  
