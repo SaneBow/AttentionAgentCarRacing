@@ -72,9 +72,9 @@ class BaseESMaster(abc.ABC):
         # Evaluate before train.
         eval_scores = self._evaluate()
         misc.utility.log_scores(
-            logger=self._logger, iter_cnt=0, scores=eval_scores, evaluate=True)
+            logger=self._logger, iter_cnt=self._start_iter, scores=eval_scores, evaluate=True)
         misc.utility.save_scores(
-            log_dir=self._log_dir, n_iter=0, scores=eval_scores)
+            log_dir=self._log_dir, n_iter=self._start_iter, scores=eval_scores)
         best_eval_score = -float('Inf')
 
         self._logger.info(
