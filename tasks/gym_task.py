@@ -160,7 +160,7 @@ class CarRacingTask(GymTask):
         # self._action_high = np.array([1., 1., 1.])
         # self._action_low = np.array([-1., 0., 0.])
         self._action_high = np.array([1., 1.])
-        self._action_low = np.array([-1., 0.])
+        self._action_low = np.array([-1., -1.])
         self.crop = crop
         self.grass_penalty = grass_penalty
         self.action_repeat = action_repeat
