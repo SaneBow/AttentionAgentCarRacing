@@ -44,7 +44,8 @@ utility.create_task.task_loader = @gym_task.CarRacingTask()
 gym_task.CarRacingTask.crop = True
 gym_task.CarRacingTask.grass_penalty = 3
 gym_task.CarRacingTask.action_repeat = 1
-gym_task.CarRacingTask.opponent = @policy_api.PPOPolicyAPI()
+
+# gym_task.CarRacingTask.opponent = @policy_api.PPOPolicyAPI()
 
 # policy_api.PPOPolicyAPI.log_dir = "opponents/data/alphacar/"
 # policy_api.PPOPolicyAPI.suffix = "alphacar"
